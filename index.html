@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Telegram Bot</title>
+  <style>
+    body {
+      background: #f0f2f5;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 30px;
+    }
+    .container {
+      background: white;
+      max-width: 400px;
+      margin: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      padding: 20px;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 10px;
+    }
+    input[type="number"] {
+      padding: 10px;
+      width: 80%;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #0088cc;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #007ab8;
+    }
+    a {
+      display: inline-block;
+      margin-top: 15px;
+      text-decoration: none;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Telegram Bot Interface</h2>
+    <img src="https://i.postimg.cc/g0gTt08B/IMG-20250704-221248.jpg" alt="Bot Image">
+    
+    <p>Add Minimum 20 Points</p>
+    <input type="number" id="pointsInput" placeholder="Enter points (min 20)" min="20">
+    <br>
+    <button onclick="addPoints()">Add Points</button>
+
+    <div id="result" style="margin-top: 10px; color: green;"></div>
+
+    <a href="https://t.me/your_bot_username" target="_blank">
+      <button>Start Bot</button>
+    </a>
+  </div>
+
+  <script>
+    function addPoints() {
+      const points = document.getElementById("pointsInput").value;
+      const result = document.getElementById("result");
+
+      if (points >= 20) {
+        result.textContent = ✅ ${points} points added successfully.;
+      } else {
+        result.textContent = ❌ Minimum 20 points required.;
+        result.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>
